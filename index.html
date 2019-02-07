@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v3.8.5">
+  <title>Dashboard Template · Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/plugins/datatables-net/datatables.min.css">
+  <link rel="stylesheet" href="assets/plugins/datetime-picker/src">
+  <link rel="stylesheet" href="assets/plugins/datetime-picker/build/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="assets/plugins/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="assets/plugins/sweetalert/dist/sweetalert2.min.css">
+  <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+      }
+      
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  <!-- Custom styles for this template -->
+  <link href="assets/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark fixed-top bg-dark shadow navbar-expand-sm">
+    <a class="navbar-brand" href="#"  data-toggle="offcanvas">Predatech KulGram</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top_nav" aria-controls="top_nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="top_nav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Menu</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0">
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      </form>
+      <a class="nav-link" href="#">Sign out</a>
+    </div>
+  </nav>
+  
+  <nav class="col-md-2 d-none mt-3 d-md-block bg-light sidebar">
+    <div class="sidebar-sticky offcanvas-collapse">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            <span data-feather="home"></span>
+            Dashboard <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="file"></span>
+            Orders
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="shopping-cart"></span>
+            Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="users"></span>
+            Customers
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="bar-chart-2"></span>
+            Reports
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="layers"></span>
+            Integrations
+          </a>
+        </li>
+      </ul>
+
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span>Saved reports</span>
+        <a class="d-flex align-items-center text-muted" href="#">
+          <span data-feather="plus-circle"></span>
+        </a>
+      </h6>
+      <ul class="nav flex-column mb-2">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="file-text"></span>
+            Current month
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="file-text"></span>
+            Last quarter
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="file-text"></span>
+            Social engagement
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="file-text"></span>
+            Year-end sale
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="container-fluid">
+  <dixv class="row">
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dashboard</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card text-center">
+              <div class="card-header">
+                <h5>Section title</h5>
+              </div>
+              <div class="card-body">
+                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card text-center">
+              <div class="card-header">
+                <h5>Section title</h5>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped table-sm" id="tabel-1">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                      </tr>
+                      <tr>
+                        <td>1,002</td>
+                        <td>amet</td>
+                        <td>consectetur</td>
+                        <td>adipiscing</td>
+                        <td>elit</td>
+                      </tr>
+                      <tr>
+                        <td>1,003</td>
+                        <td>Integer</td>
+                        <td>nec</td>
+                        <td>odio</td>
+                        <td>Praesent</td>
+                      </tr>
+                      <tr>
+                        <td>1,003</td>
+                        <td>libero</td>
+                        <td>Sed</td>
+                        <td>cursus</td>
+                        <td>ante</td>
+                      </tr>
+                      <tr>
+                        <td>1,004</td>
+                        <td>dapibus</td>
+                        <td>diam</td>
+                        <td>Sed</td>
+                        <td>nisi</td>
+                      </tr>
+                      <tr>
+                        <td>1,005</td>
+                        <td>Nulla</td>
+                        <td>quis</td>
+                        <td>sem</td>
+                        <td>at</td>
+                      </tr>
+                      <tr>
+                        <td>1,006</td>
+                        <td>nibh</td>
+                        <td>elementum</td>
+                        <td>imperdiet</td>
+                        <td>Duis</td>
+                      </tr>
+                      <tr>
+                        <td>1,007</td>
+                        <td>sagittis</td>
+                        <td>ipsum</td>
+                        <td>Praesent</td>
+                        <td>mauris</td>
+                      </tr>
+                      <tr>
+                        <td>1,008</td>
+                        <td>Fusce</td>
+                        <td>nec</td>
+                        <td>tellus</td>
+                        <td>sed</td>
+                      </tr>
+                      <tr>
+                        <td>1,009</td>
+                        <td>augue</td>
+                        <td>semper</td>
+                        <td>porta</td>
+                        <td>Mauris</td>
+                      </tr>
+                      <tr>
+                        <td>1,010</td>
+                        <td>massa</td>
+                        <td>Vestibulum</td>
+                        <td>lacinia</td>
+                        <td>arcu</td>
+                      </tr>
+                      <tr>
+                        <td>1,011</td>
+                        <td>eget</td>
+                        <td>nulla</td>
+                        <td>Class</td>
+                        <td>aptent</td>
+                      </tr>
+                      <tr>
+                        <td>1,012</td>
+                        <td>taciti</td>
+                        <td>sociosqu</td>
+                        <td>ad</td>
+                        <td>litora</td>
+                      </tr>
+                      <tr>
+                        <td>1,013</td>
+                        <td>torquent</td>
+                        <td>per</td>
+                        <td>conubia</td>
+                        <td>nostra</td>
+                      </tr>
+                      <tr>
+                        <td>1,014</td>
+                        <td>per</td>
+                        <td>inceptos</td>
+                        <td>himenaeos</td>
+                        <td>Curabitur</td>
+                      </tr>
+                      <tr>
+                        <td>1,015</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card border-primary">
+              <div class="card-header text-center text-white bg-primary">
+                <h5>Forms</h5>
+              </div>
+              <div class="card-body">
+                <form id="form" name="form" method="POST">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row mb-4">
+                        <label for="email" class="col-md-3 col-form-label">Email</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" id="email" name="form[email]" placeholder="email@example.com"
+                            autocomplete="off" data-validation="[NOTEMPTY,EMAIL]">
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label for="uname" class="col-md-3 col-form-label">Username</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" id="uname" name="form[uname]" placeholder="Username"
+                            autocomplete="off" data-validation="[NOTEMPTY]">
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label for="password" class="col-md-3 col-form-label">Password</label>
+                        <div class="col-md-9">
+                          <input type="password" class="form-control" id="password" name="form[password]" placeholder="Password"
+                            data-validation="[NOTEMPTY]">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row mb-4">
+                        <label for="fname" class="col-md-3 col-form-label">Fullname</label>
+                        <div class="col-md-9">
+                          <input type="text" class="form-control" id="fname" name="form[fname]" placeholder="Fullname"
+                            autocomplete="off" data-validation="[NOTEMPTY]">
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label for="emai" class="col-md-3 col-form-label">Gender</label>
+                        <div class="col-md-9">
+                          <div class="form-check form-check-inline">
+                            <div class="custom-control custom-radio mr-4">
+                              <input type="radio" class="custom-control-input" id="male" name="form[gender]">
+                              <label class="custom-control-label" for="male">Male</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" class="custom-control-input" id="female" name="form[gender]">
+                              <label class="custom-control-label" for="female">Female</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label for="emai" class="col-md-3 col-form-label">Favorite Color</label>
+                        <div class="col-md-9">
+                          <div class="form-check form-check-inline">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="form[color_red]" id="red">
+                              <label class="custom-control-label text-danger" for="red">Red</label>
+                            </div>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="form[color_blue]" id="blue">
+                              <label class="custom-control-label text-primary" for="blue">Blue</label>
+                            </div>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="form[color_green]" id="green">
+                              <label class="custom-control-label text-success" for="green">Green</label>
+                            </div>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="form[color_yellow]" id="yellow">
+                              <label class="custom-control-label text-warning" for="yellow">Yellow</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label for="fname" class="col-md-3 col-form-label">Religion</label>
+                        <div class="col-md-9">
+                          <select class="custom-select" id="religion" name="form[religion]" data-validation="[NOTEMPTY]">
+                            <option value="">Select One</option>
+                            <option value="Muslims">Muslims</option>
+                            <option value="Christians">Christians</option>
+                            <option value="Protestants">Protestants</option>
+                            <option value="Hindus">Hindus</option>
+                            <option value="Buddhists">Buddhists</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label for="dateofbirth" class="col-md-3 col-form-label">Date of Birth</label>
+                        <div class="col-md-9">
+                          <div class="input-group" id="dateofbirth" data-target-input="nearest">
+                            <input type="text" class="form-control" data-target="#dateofbirth" name="form[dateofbirth]"
+                              autocomplete="off">
+                            <div class="input-group-prepend" data-target="#dateofbirth" data-toggle="datetimepicker">
+                              <span class="input-group-text"><span data-feather="calendar"></span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label for="dateofbirth" class="col-md-3 col-form-label">Photo</label>
+                        <div class="col-md-9">
+                          <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="photo" name="form[photo]" accept="image/x-png,image/gif,image/jpeg">
+                            <label class="custom-file-label" for="photo">Choose file</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" id="save" class="btn btn-primary"><span data-feather="save"></span> Submit</button>
+                    <button type="button" id="clear" class="btn btn-warning"><span data-feather="x"></span> Clear</button>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer text-muted">
+                2 days ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </dixv>
+  </div>
+  <script src="assets/plugins/jquery/dist/jquery.slim.js"></script>
+  <script src="assets/js/bootstrap.bundle.js"></script>
+  <script src="assets/plugins/feather/feather.js"></script>
+  <script src="assets/plugins/chartjs/Chart.min.js"></script>
+  <script src="assets/plugins/datatables-net/datatables.min.js"></script>
+  <script src="assets/plugins/moment/moment.js"></script>
+  <script src="assets/plugins/datetime-picker/build/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script src="assets/plugins/input-mask/jquery.mask.min.js"></script>
+  <script src="assets/plugins/input-mask/input-mask-init.js"></script>
+  <script src="assets/plugins/select2/dist/js/select2.full.min.js"></script>
+  <script src="assets/plugins/sweetalert/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/plugins/jquery-form-validation/dist/jquery.validation.js"></script>
+  <script src="assets/plugins/dashboard.js"></script>
+  <script>
+    $(function () {
+      $('[data-toggle="offcanvas"]').click(function () {
+        $('.offcanvas-collapse').toggleClass('open')
+      });
+
+      $('#tabel-1').DataTable();
+
+      $("#save").click(function () {
+        swal("Alert Success", "Kuliah Telegram!!", "success")
+      });
+      
+      $("#clear").click(function () {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.value) {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+          }
+        })
+      });
+      $('#form').validate({
+        submit: {
+          settings: {
+            inputContainer: '.form-group',
+          }
+        }
+      });
+      $('#religion').select2();
+      $('#dateofbirth').datetimepicker({
+        format: 'L'
+      });
+    });
+  </script>
+</body>
+
+</html>
