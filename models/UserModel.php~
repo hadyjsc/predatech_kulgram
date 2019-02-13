@@ -1,0 +1,51 @@
+<?php
+namespace models;
+
+/**
+ * @Entity
+ * @Table(name="users")
+ */
+class UserModel
+{
+    /**
+     * @Id
+     * @GeneratedValue
+     * @Column(type="smallint")
+     */
+    private $id;
+
+    /**
+     * @Column(type="string")
+     */
+    private $fname;
+
+    /**
+     * @Column(type="string")
+     */
+    private $uname;
+
+    /**
+     * @Column(type="string")
+     */
+    private $password;
+
+    /**
+     * @Column(type="string", columnDefinition="ENUM('admin', 'manager', 'member')")
+     */
+    private $level;
+    
+    /**
+     * @Column(type="string", columnDefinition="ENUM('actived', 'deactived', 'blocked', 'deleted')")
+     */
+    private $status;
+
+    /**
+     * @Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @Column(type="datetime")
+     */
+    private $updatedAt;
+}

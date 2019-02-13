@@ -1,0 +1,60 @@
+Table Name : db_inventory
+Number of Table : 6
+Table : users, items, manufacturers, location, bookings, reports
+
+users
+- id (int:11) primary key
+- fname (varchar:30)
+- uname (varchar:10)
+- password (varchar:255)
+- level (enum)
+- status (enum)
+- createdAt (datetime)
+- updatedAt (datetime)
+
+items
+- id (int:11) primary key
+- name (varchar:30)
+- serialNumber (varchar:12)
+- type (varchar:10)
+- stock (int:11)
+- manufacturerId (int:11) foreign key -> manufacturers
+- availableBooking (boolean)
+- images (varchar:255)
+- createdAt (datetime)
+- updatedAt (datetime)
+
+manufacturers
+- id (int:11) primary key
+- name (varchar:30)
+- description (varchar:50)
+- createdAt (datetime)
+- updatedAt (datetime)
+
+locations
+- id (int:11) primary key
+- floor (int:4)
+- block (varchar:5)
+- room (varchar:20)
+- createdAt (datetime)
+- updatedAt (datetime)
+
+bookings
+- id (int:11) primary key
+- itemId (int:11) foreign key -> items
+- userId (int:11) foreign key -> users
+- locationId (int:11) foreign key -> locations
+- bookingNumber (varchar:20)
+- bookingDate (date)
+- bookingTime (time)
+- returnDate (date)
+- returnTime (time)
+- description (varchar:50)
+- createdAt (datetime)
+- updatedAt (datetime)
+
+reports
+- id (int:11) primary key
+- reportName (varchar:20)
+- reportData (json)
+- createdAt (datetime)
